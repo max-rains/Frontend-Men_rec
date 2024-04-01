@@ -10,19 +10,30 @@
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
+      
     />
+    
 
     <title>Frontend Mentor | Recipe page</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
-      .attribution {
-        font-size: 11px;
+      /* .attribution {
+        font-size: 16px;
         text-align: center;
-      }
-      .attribution a {
+      } */
+      /* .attribution a {
         color: hsl(228, 45%, 44%);
-      }
+      } */
+      
+      @font-face {
+      src:url(assets/fonts/young-serif/YoungSerif-Regular.ttf);
+      font-family: young;
+     }
+     @font-face {
+      src:url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+      font-family: outfit;
+     }
      img {
       border-radius: 2%;
       max-width: 100%;
@@ -30,22 +41,51 @@
      }
      .main {
      background-color: hsl(0, 0%, 100%);
-      width: 80%;
+      /* width: 50%; */
+      max-width: 1440px;
       margin: 0 auto;
-      padding: 20px;
-      border: 3px solid black
+      padding: 80px;
+    
+      text-align: left;
+      font-size: 16px;
+      
      }
+     @media only screen and (max-width: 768px) {
+      
+        .main {
+            max-width: 100%; 
+            padding: 10px;
+        }
+    }
      .box-around-text{
       padding-left: 25px;
-      padding-bottom: 10px;
-      background-color: hsl(330, 100%, 98%);
-     }
+     
+      padding-bottom: 20px;
+      padding-top: 1px;
+      margin-top: 10px;
+     
+      
+      background-color: hsl(330, 56%, 93%);
+      
+     }.box-around-text li{
+        margin-bottom: 20px;
+      }
      h2{
       color: hsl(332, 51%, 32%);
      }
+     h1,h2 {
+      font-family: young;
+      font-weight: 400;
+     }
+
+      
+
      body{
       background-color: hsl(30, 54%, 90%); 
-      font-size: 16px;
+      font-family: outfit;
+      font-weight: 400;
+      
+      
       
      }
      
@@ -53,6 +93,37 @@
     color: hsl(332, 51%, 32%);
     font-weight: bold;
 }
+      .ingredients li{ 
+        margin-bottom: 20px;
+
+      }
+      .instructions li{ 
+        margin-bottom: 20px;
+
+      }
+      table {
+        width: 50%;
+        border-collapse: collapse;
+        
+      }
+      table th {
+       padding: 2px;
+      
+        
+      }
+      table td {
+        color: hsl(332, 51%, 32%);
+        text-align: right;
+        
+        
+        
+        
+       
+        
+      }
+      p {
+        margin-bottom: 20px;
+      }
        
     </style>
   </head>
@@ -63,11 +134,13 @@
     <h1>Simple Omelette Recipe</h1>
     
 
-      An easy and quick dish, perfect for any meal. This classic omelette
-      combines beaten eggs cooked to perfection, optionally filled with your
-      choice of cheese, vegetables, or meats.
+      <p>
+        An easy and quick dish, perfect for any meal. This classic omelette
+        combines beaten eggs cooked to perfection, optionally filled with your
+        choice of cheese, vegetables, or meats.
+      </p>
       
-  
+
   
 
   <div class="box-around-text">
@@ -80,8 +153,8 @@
     </div>
     
     <h2>Ingredients</h2>
-   
-    <li>
+   <div class="ingredients">
+    <li >
       2-3 large eggs</li>
        <li>Salt, to taste</li> 
        <li>
@@ -94,52 +167,67 @@
        Optional fillings: cheese, diced
           vegetables, cooked meats, herbs
      </li>
+    </div>
      <br>
      <hr>
     <h2>Instructions</h2>
-      <ol>
-        <li>
-           Beat the eggs: In a bowl, beat
-              the eggs with a pinch of salt and pepper until they are well mixed. You can
-              add a tablespoon of water or milk for a fluffier texture.
-        </li>
-       Heat the pan:
-    <li>Place a non-stick frying pan over medium heat and add butter or oil.</li> 
-    <li>
-      Cook
-          the omelette: Once the butter is melted and bubbling, pour in the eggs. Tilt
-          the pan to ensure the eggs evenly coat the surface.
-    </li> <li>
-      Add fillings (optional):
-          When the eggs begin to set at the edges but are still slightly runny in the
-          middle, sprinkle your chosen fillings over one half of the omelette.
-    </li> <li>
-      Fold
-          and serve: As the omelette continues to cook, carefully lift one edge and
-          fold it over the fillings. Let it cook for another minute, then slide it
-          onto a plate.
-    </li> <li><b>Enjoy: </b>Serve hot, with additional salt and pepper if needed.</li> 
-  </ol>
+      <div class="instructions">
+        <ol>
+          <li>
+             <b>Beat the eggs: </b>In a bowl, beat
+                the eggs with a pinch of salt and pepper until they are well mixed. You can
+                add a tablespoon of water or milk for a fluffier texture.
+          </li>
+         
+            <li><b>Heat the pan:</b>Place a non-stick frying pan over medium heat and add butter or oil.</li> 
+            <li>
+        <b>Cook the omelette: </b>Once the butter is melted and bubbling, pour in the eggs. Tilt
+            the pan to ensure the eggs evenly coat the surface.
+            </li> <li>
+        <b>Add fillings (optional):</b>
+            When the eggs begin to set at the edges but are still slightly runny in the
+            middle, sprinkle your chosen fillings over one half of the omelette.
+            </li> <li>
+        <b>
+          Fold
+              and serve:
+        </b> As the omelette continues to cook, carefully lift one edge and
+            fold it over the fillings. Let it cook for another minute, then slide it
+            onto a plate.
+            </li> <li><b>Enjoy: </b>Serve hot, with additional salt and pepper if needed.</li> 
+          </ol>
+      </div>
 
             
   <hr>
     <h2>Nutrition</h2>
    
-    table below shows nutritional values per serving without the
-    additional fillings.
+    <p>
+      The table below shows nutritional values per serving without the
+      additional fillings.
+    </p>
     <br>
-    <table> 
-      <thead>
-       
-      <tbody>
-        <tr>
-          <th scope="col">Calories</th>
-          <td scope="row">277kcal</td>
-          <th>Carbs</th>
-          <td>0g</td>
-        
-        </tr><br>
-      Calories 277kcal Carbs 0g Protein 20g Fat 22g
+    <Table>
+      <th>Calories</th>
+      <td>277kcal</td>
+    </Table>
+    <hr>
+    <Table>
+      <th>Carbs</th>
+      <td>30g</td>
+    </Table>
+    <hr>
+    <Table>
+      <th>Protein</th>
+      <td>20g</td>
+    </Table>
+    <hr>
+    <Table>
+      <th>Fat</th>
+      <td>22g</td>
+    </Table>
+    
+       <!-- Calories 277kcal Carbs 0g Protein 20g Fat 22g  -->
   </main>
     <div class="attribution">
       Challenge by
